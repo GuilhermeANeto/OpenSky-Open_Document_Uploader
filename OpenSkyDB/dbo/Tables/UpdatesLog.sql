@@ -7,5 +7,5 @@
     [LastVersion] NVARCHAR(30) NULL, 
     [NewVersion] NVARCHAR(30) NULL, 
     [User] INT NULL, 
-    CONSTRAINT [FK_UpdatesLog_Document] FOREIGN KEY ([IdUpdate]) REFERENCES [Document]([IdDocument]) 
+    CONSTRAINT [FK_UpdatesLog_Document] FOREIGN KEY ([DocumentId]) REFERENCES [Document]([IdDocument]) 
 )
