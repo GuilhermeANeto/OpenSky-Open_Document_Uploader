@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1738
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSky", "OpenSky\OpenSky.csproj", "{31774B11-44FF-4687-8C6B-1429556D6B3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{FCCA75E4-27CF-4435-8720-6692C7AAAA2D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "OpenSkyDB", "OpenSkyDB\OpenSkyDB.sqlproj", "{C525894B-4A7B-4A22-8731-03206D764A8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{31774B11-44FF-4687-8C6B-1429556D6B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31774B11-44FF-4687-8C6B-1429556D6B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31774B11-44FF-4687-8C6B-1429556D6B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCA75E4-27CF-4435-8720-6692C7AAAA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCA75E4-27CF-4435-8720-6692C7AAAA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCA75E4-27CF-4435-8720-6692C7AAAA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCA75E4-27CF-4435-8720-6692C7AAAA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C525894B-4A7B-4A22-8731-03206D764A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C525894B-4A7B-4A22-8731-03206D764A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C525894B-4A7B-4A22-8731-03206D764A8D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C525894B-4A7B-4A22-8731-03206D764A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C525894B-4A7B-4A22-8731-03206D764A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C525894B-4A7B-4A22-8731-03206D764A8D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
