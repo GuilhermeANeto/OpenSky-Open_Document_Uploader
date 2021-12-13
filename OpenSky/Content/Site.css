@@ -12,7 +12,8 @@
 /* Set width on the form input elements since they're 100% wide by default */
 input, select, textarea {
     /*max-width: 280px;*/
-    border-radius: 18px!important;
+    border-radius: 18px !important;
+    padding-left: 5px;
 }
 
 .container{
@@ -24,7 +25,7 @@ input, select, textarea {
     justify-content: space-around;
 }
 
-#container-navbar-top {
+.navbar-top .container-fluid-nav {
     border-top: 1px black solid;
     background-color: #eeeeee;
 }
@@ -35,12 +36,12 @@ input, select, textarea {
      border: 0px solid transparent;
 }
 
-#container-navbar-bottom {
+.navbar-bottom .container-fluid-nav {
     /*border-bottom: 1px black solid;*/
     background-color: #f7f7f7;
 }
 
-#header-navbar-top a {
+.navbar-top a {
     color: black;
     font-size: x-large;
     font-weight: lighter;
@@ -57,6 +58,30 @@ input, select, textarea {
     bottom: 0;
     width: 100%;
     height: 60%;
+    position:fixed;
+}
+
+#divSearchBar .form-group {
+    margin-bottom: 0;
+}
+
+#divSearchBar {
+    padding: 5px;
+    background-color: #f7f7f7;
+    opacity: 0.8;
+}
+
+#txtSearch{
+    /*background-color:transparent;*/
+}
+
+#divDocumentList{
+    margin-top:10px;
+}
+
+.list-group a {
+    margin-top: 5px;
+    border-radius: 30px !important;
 }
 
 

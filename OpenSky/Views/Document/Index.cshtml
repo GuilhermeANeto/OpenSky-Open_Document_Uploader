@@ -3,16 +3,16 @@
     ViewBag.Title = "OpenSky - Open File Upload";
 }
 
-<div class="navbar navbar-fixed-top">
-    <div id="container-navbar-top" class="container-fluid-nav">
-        <div id="header-navbar-top" class="navbar-header">
+<div class="navbar navbar-fixed-top navbar-top">
+    <div id="" class="container-fluid-nav">
+        <div id="" class="navbar-header">
             @Html.ActionLink("Open Sky", "Index", "Document", new { area = "" }, new { @class = "navbar-brand" })
         </div>
     </div>
 </div>
 <div class="navbar navbar-bottom">
-    <div id="container-navbar-bottom" class="container-fluid-nav">
-        <div id="header-navbar-bottom" class="navbar-header">
+    <div id="" class="container-fluid-nav">
+        <div id="" class="navbar-header">
             <h5>Upload Document:</h5>
         </div>
     </div>
@@ -26,13 +26,13 @@
                     <label>
                         Título:
                     </label>
-                    <input type="text" id="txtTitulo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+                    <input type="text" id="txtTitulo" class="form-control" />
                 </div>
                 <div class="form-group form-group-sm col-sm-12">
                     <label>
                         Descrição:
                     </label>
-                    <textarea id="txtDescricao" class="form-control" style="padding-left: 2px; padding-right: 0px"></textarea>
+                    <textarea id="txtDescricao" class="form-control"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -40,42 +40,71 @@
                     <label>
                         Nome do Arquivo:
                     </label>
-                    <input type="text" id="txtNomeArquivo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+                    <input type="text" id="txtNomeArquivo" class="form-control" />
                 </div>
                 <div class="form-group form-group-sm col-sm-4">
                     <label>
                         Versão:
                     </label>
-                    <input type="text" id="txtVersao" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+                    <input type="text" id="txtVersao" class="form-control" />
                 </div>
                 <div class="form-group form-group-sm col-sm-4">
                     <label>
                         Arquivo:
                     </label>
-                    <input type="file" id="fileArquivo" class="form-control" style="padding-left: 15px; padding-right: 0px" />
+                    <input type="file" id="fileArquivo" class="form-control" />
                 </div>
             </div>
             <button type="button" id="btnBuscaAvancada" class="btn btn-md btn-primary pull-right" style="margin-left: 3px"><i class="fa fa-fa-plus" style="padding-right: 5px"></i>Adicionar Documento</button>
         </div>
     </div>
     <div id="divDocList" class="row">
+        <div id="divSearchBar" class="row">
+            <div class="form-group form-group-sm col-sm-6 col-sm-offset-3">
+                <input type="text" id="txtTitulo" placeholder="Buscar" class="form-control" />
+                @*<button type="button" class="btn btn-md btn-primary pull-right" style="margin-left: 3px"><i class="fa fa-fa-search" style="padding-right: 5px"></i></button>*@
+            </div>
+        </div>
+        <div id="divDocumentList" class="row">
+            <div class="form-group form-group-sm col-sm-6 col-sm-offset-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">...</p>
+                    </a>
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">...</p>
+                    </a>
+                </div>
 
-    </div>
-
-    @*<nav class="navbar navbar-fixed-top">
-            <div class="container-fluid">
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                @*<div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small>3 days ago</small>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>*@
-</div>
+                        <p class="mb-1">ta gravida at eget metus. Maecenas sed</p>
+                        <small>Donec id elit non mi porta.</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                </div>*@
+            </div>
+        </div>
+        
+    </div>
