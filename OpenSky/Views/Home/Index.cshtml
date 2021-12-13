@@ -1,46 +1,52 @@
 ﻿@{
     ViewBag.Title = "File Your Document";
 }
-
 @* ------------------- cadastro ------------------- *@
-<div id="docInfo" style="margin-top:100px">
-    <div class="row">
-        <div class="form-group form-group-sm col-sm-6">
-            <label>
-                Título:
-            </label>
-            <input type="text" id="txtTitulo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
-        </div>
-        <div class="form-group form-group-sm col-sm-6">
-            <label>
-                Nome do Arquivo:
-            </label>
-            <input type="text" id="txtNomeArquivo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
-        </div>
-        <div class="form-group form-group-sm col-sm-6">
-            <label>
-                Arquivo:
-            </label>
-            <input type="text" id="fileArquivo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
-        </div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        @Html.ActionLink("Open Sky", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
     </div>
-    <div class="row">
-        <div class="form-group form-group-sm col-sm-6">
-            <label>
-                Descrição:
-            </label>
-            <textarea id="txtDescricao" class="form-control" style="padding-left: 2px; padding-right: 0px"></textarea>
-        </div>
-    </div>
-    <button type="button" id="btnBuscaAvancada" class="btn btn-sm btn-primary" style="margin-top: 23px; margin-left: 3px"><i class="fa fa-fa-plus" style="padding-right: 5px"></i>Adicionar</button>
 </div>
-<div id="docList">
-    @* ------------------- document list ------------------- *@
-    <div class="row">
-        <div>
-            <h1>ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="container body-content">
+    <div id="docInfo" style="margin-top:100px">
+        <div class="row">
+            <div class="form-group form-group-sm col-sm-6">
+                <label>
+                    Título:
+                </label>
+                <input type="text" id="txtTitulo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+            </div>
+            <div class="form-group form-group-sm col-sm-6">
+                <label>
+                    Nome do Arquivo:
+                </label>
+                <input type="text" id="txtNomeArquivo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+            </div>
+            <div class="form-group form-group-sm col-sm-6">
+                <label>
+                    Arquivo:
+                </label>
+                <input type="text" id="fileArquivo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group form-group-sm col-sm-6">
+                <label>
+                    Descrição:
+                </label>
+                <textarea id="txtDescricao" class="form-control" style="padding-left: 2px; padding-right: 0px"></textarea>
+            </div>
+        </div>
+        <button type="button" id="btnBuscaAvancada" class="btn btn-sm btn-primary" style="margin-top: 23px; margin-left: 3px"><i class="fa fa-fa-plus" style="padding-right: 5px"></i>Adicionar</button>
+    </div>
+    <div id="docList">
+        @* ------------------- document list ------------------- *@
+        <div class="row">
+            <div>
+                <h1>ASP.NET</h1>
+                <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
+                <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+            </div>
         </div>
     </div>
 </div>

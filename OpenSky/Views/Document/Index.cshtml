@@ -1,7 +1,81 @@
 ﻿
 @{
-    ViewBag.Title = "Testando asp.net mvc";
+    ViewBag.Title = "OpenSky - Open File Upload";
 }
 
-<h2>Teste</h2>
+<div class="navbar navbar-fixed-top">
+    <div id="container-navbar-top" class="container-fluid-nav">
+        <div id="header-navbar-top" class="navbar-header">
+            @Html.ActionLink("Open Sky", "Index", "Document", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+    </div>
+</div>
+<div class="navbar navbar-bottom">
+    <div id="container-navbar-bottom" class="container-fluid-nav">
+        <div id="header-navbar-bottom" class="navbar-header">
+            <h5>Upload Document:</h5>
+        </div>
+    </div>
+</div>
 
+<div class="container body-content">
+    <div id="divDocInfo" class="row">
+        <div class="form-group form-group-sm col-sm-6 col-sm-offset-3">
+            <div class="row">
+                <div class="form-group form-group-sm col-sm-12">
+                    <label>
+                        Título:
+                    </label>
+                    <input type="text" id="txtTitulo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+                </div>
+                <div class="form-group form-group-sm col-sm-12">
+                    <label>
+                        Descrição:
+                    </label>
+                    <textarea id="txtDescricao" class="form-control" style="padding-left: 2px; padding-right: 0px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group form-group-sm col-sm-4">
+                    <label>
+                        Nome do Arquivo:
+                    </label>
+                    <input type="text" id="txtNomeArquivo" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+                </div>
+                <div class="form-group form-group-sm col-sm-4">
+                    <label>
+                        Versão:
+                    </label>
+                    <input type="text" id="txtVersao" class="form-control" style="padding-left: 2px; padding-right: 0px" />
+                </div>
+                <div class="form-group form-group-sm col-sm-4">
+                    <label>
+                        Arquivo:
+                    </label>
+                    <input type="file" id="fileArquivo" class="form-control" style="padding-left: 15px; padding-right: 0px" />
+                </div>
+            </div>
+            <button type="button" id="btnBuscaAvancada" class="btn btn-md btn-primary pull-right" style="margin-left: 3px"><i class="fa fa-fa-plus" style="padding-right: 5px"></i>Adicionar Documento</button>
+        </div>
+    </div>
+    <div id="divDocList" class="row">
+
+    </div>
+
+    @*<nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>*@
+</div>
