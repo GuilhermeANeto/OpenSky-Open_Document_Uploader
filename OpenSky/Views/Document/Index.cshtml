@@ -10,16 +10,25 @@
         </div>
     </div>
 </div>
-<div class="navbar navbar-bottom">
-    <div id="" class="container-fluid-nav">
-        <div id="" class="navbar-header">
-            <h5>Upload Document:</h5>
-        </div>
+<div id="navbar-bottom" class="row">
+    <div class="form-group form-group-sm col-sm-3" style="padding-right:0">
+        <button type="button" class="btn btn-sm btn-default pull-right" style="margin-top:4px" onclick="$('#divDocInfo').toggle();"><i class="fa fa-plus"></i></button>
+    </div>
+    <div class="form-group form-group-sm col-sm-6">
+        <h5><span class="spnEditing">Cadastrar Novo</span> Documento:</h5>
     </div>
 </div>
+@*<div class="navbar navbar-bottom">
+        <div id="" class="container-fluid-nav">
+            <div id="" class="navbar-header">
+                <h5>Upload Document:</h5>
+            </div>
+        </div>
+    </div>*@
 
 <div class="container body-content">
-    <div id="divDocInfo" class="row">
+    <div id="divDocInfo" class="row" style="display:none">
+        <input type="hidden" id="hddIdDocumentoEdicao" class="form-control" />
         <div class="form-group form-group-sm col-sm-6 col-sm-offset-3">
             <div class="row">
                 <div class="form-group form-group-sm col-sm-12">
@@ -28,6 +37,14 @@
                     </label>
                     <input type="text" id="txtTitulo" class="form-control" />
                 </div>
+                <div class="form-group form-group-sm col-sm-6" style="display:none">
+                    <label>
+                        Data da Ultima Modificação:
+                    </label>
+                    <input type="text" id="txtDataUltimaModificacao" readonly="readonly" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
                 <div class="form-group form-group-sm col-sm-12">
                     <label>
                         Descrição:
@@ -36,12 +53,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="form-group form-group-sm col-sm-4">
-                    <label>
-                        Nome do Arquivo:
-                    </label>
-                    <input type="text" id="txtNomeArquivo" class="form-control" />
-                </div>
                 <div class="form-group form-group-sm col-sm-4">
                     <label>
                         Versão:
@@ -54,57 +65,21 @@
                     </label>
                     <input type="file" id="fileArquivo" class="form-control" />
                 </div>
+                <div class="form-group form-group-sm col-sm-4">
+                    <button type="button" id="btnAdicionarDocument" class="btn btn-md btn-primary pull-right" style="margin-left: 3px;width:100%"><span class="spnEditing">Cadastrar Novo</span> Documento</button>
+                </div>
             </div>
-            <button type="button" id="btnBuscaAvancada" class="btn btn-md btn-primary pull-right" style="margin-left: 3px"><i class="fa fa-fa-plus" style="padding-right: 5px"></i>Adicionar Documento</button>
         </div>
     </div>
     <div id="divDocList" class="row">
         <div id="divSearchBar" class="row">
             <div class="form-group form-group-sm col-sm-6 col-sm-offset-3">
                 <input type="text" id="txtTitulo" placeholder="Buscar" class="form-control" />
-                @*<button type="button" class="btn btn-md btn-primary pull-right" style="margin-left: 3px"><i class="fa fa-fa-search" style="padding-right: 5px"></i></button>*@
             </div>
+            <button type="button" class="btn btn-sm btn-default" style="" onclick="BuscarDocumentos();"><i class="fa fa-search"></i></button>
         </div>
-        <div id="divDocumentList" class="row">
-            <div class="form-group form-group-sm col-sm-6 col-sm-offset-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">...</p>
-                    </a>
-                    <a href="#" class="list-group-item active">
-                        <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">...</p>
-                    </a>
-                </div>
-
-                @*<div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small>3 days ago</small>
-                        </div>
-                        <p class="mb-1">ta gravida at eget metus. Maecenas sed</p>
-                        <small>Donec id elit non mi porta.</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Maecenas sed diam eget risus varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
-                </div>*@
-            </div>
+        <div id="divDocumentList" class="row list-group">
+   
         </div>
-        
     </div>
+</div>

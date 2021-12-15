@@ -16,13 +16,28 @@ input, select, textarea {
     padding-left: 5px;
 }
 
-.container{
-    width:100%
+.container {
+    width: 100%;
+    background-color: #fcfcfc;
 }
 
 .container-fluid-nav {
     display: flex;
     justify-content: space-around;
+}
+
+#divDocInfo {
+    background-color: #fcfcfc;
+    /*height: 50%;*/
+}
+
+#divDocList {
+    background-color: #5eb4b424;
+    /*position: absolute;*/
+    bottom: 0;
+    width: 100%;
+    /*height: 50%;*/
+    /*position: fixed;*/
 }
 
 .navbar-top .container-fluid-nav {
@@ -31,34 +46,20 @@ input, select, textarea {
 }
 
 .navbar-bottom {
-     min-height: 0px;
-     margin-bottom: 0px; 
-     border: 0px solid transparent;
+    min-height: 0;
+    margin-bottom: 0;
+    border: 0 solid transparent;
 }
 
-.navbar-bottom .container-fluid-nav {
-    /*border-bottom: 1px black solid;*/
-    background-color: #f7f7f7;
-}
+    .navbar-bottom .container-fluid-nav {
+        /*border-bottom: 1px black solid;*/
+        background-color: #f7f7f7;
+    }
 
 .navbar-top a {
     color: black;
     font-size: x-large;
     font-weight: lighter;
-}
-
-#divDocInfo {
-    background-color: #fcfcfc;
-    height: 40%;
-}
-
-#divDocList {
-    background-color: #5eb4b424;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60%;
-    position:fixed;
 }
 
 #divSearchBar .form-group {
@@ -71,17 +72,63 @@ input, select, textarea {
     opacity: 0.8;
 }
 
-#txtSearch{
+#navbar-bottom {
+    background-color: #f7f7f7;
+}
+
+    #navbar-bottom .form-group {
+        margin-bottom: 0;
+        background-color: #f7f7f7;
+        opacity: 0.8;
+    }
+
+#btnAdicionarDocument {
+    margin-left: 3px;
+    width: 100%;
+    margin-top: 21px;
+    border-radius: 18px !important;
+}
+
+#txtSearch {
     /*background-color:transparent;*/
 }
 
-#divDocumentList{
-    margin-top:10px;
+#divDocumentList {
+    padding-top: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .list-group a {
     margin-top: 5px;
     border-radius: 30px !important;
+    border: 2px solid;
+}
+
+.list-group a small {
+    margin-left: 5px
+}
+
+#divParaInserirDocumento h4 {
+}
+
+#divParaInserirDocumento p {
 }
 
 
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#divDocInfo {
+    flex-grow: 2;
+}
+
+#divDocList {
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
