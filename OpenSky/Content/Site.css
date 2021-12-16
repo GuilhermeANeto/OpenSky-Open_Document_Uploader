@@ -4,21 +4,22 @@
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
-/* Set width on the form input elements since they're 100% wide by default */
 input, select, textarea {
     /*max-width: 280px;*/
     border-radius: 18px !important;
     padding-left: 5px;
 }
-
+/*------------- TOP OF PAGE BARS -------------*/
 .container {
     width: 100%;
     background-color: #fcfcfc;
+    padding-right: 0 !important;
+    margin-right: -8px;
 }
 
 .container-fluid-nav {
@@ -39,10 +40,14 @@ input, select, textarea {
     /*height: 50%;*/
     /*position: fixed;*/
 }
-
+/*------------- TOP OF PAGE BARS -------------*/
 .navbar-top .container-fluid-nav {
     border-top: 1px black solid;
     background-color: #eeeeee;
+}
+
+#navbar-notification .container-fluid-nav {
+    background-color: #db00004d;
 }
 
 .navbar-bottom {
@@ -51,10 +56,10 @@ input, select, textarea {
     border: 0 solid transparent;
 }
 
-    .navbar-bottom .container-fluid-nav {
-        /*border-bottom: 1px black solid;*/
-        background-color: #f7f7f7;
-    }
+.navbar-bottom .container-fluid-nav {
+    /*border-bottom: 1px black solid;*/
+    background-color: #f7f7f7;
+}
 
 .navbar-top a {
     color: black;
@@ -62,6 +67,23 @@ input, select, textarea {
     font-weight: lighter;
 }
 
+#navbar-bottom {
+    background-color: #f7f7f7;
+}
+
+#navbar-bottom .form-group {
+    margin-bottom: 0;
+    background-color: #f7f7f7;
+    opacity: 0.8;
+}
+
+#btnAdicionarDocument {
+    margin-left: 3px;
+    width: 100%;
+    margin-top: 21px;
+    border-radius: 18px !important;
+}
+/*------------- LISTA DE DOCUMENTOS -------------*/
 #divSearchBar .form-group {
     margin-bottom: 0;
 }
@@ -70,23 +92,6 @@ input, select, textarea {
     padding: 5px;
     background-color: #f7f7f7;
     opacity: 0.8;
-}
-
-#navbar-bottom {
-    background-color: #f7f7f7;
-}
-
-    #navbar-bottom .form-group {
-        margin-bottom: 0;
-        background-color: #f7f7f7;
-        opacity: 0.8;
-    }
-
-#btnAdicionarDocument {
-    margin-left: 3px;
-    width: 100%;
-    margin-top: 21px;
-    border-radius: 18px !important;
 }
 
 #txtSearch {
@@ -116,6 +121,7 @@ input, select, textarea {
 #divParaInserirDocumento p {
 }
 
+/*------------- CONNECT INFO AND LIST DIVS -------------*/
 
 .container {
     display: flex;

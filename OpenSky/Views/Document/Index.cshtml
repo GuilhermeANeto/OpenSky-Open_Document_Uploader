@@ -1,30 +1,30 @@
 ﻿
 @{
-    ViewBag.Title = "OpenSky - Open File Upload";
+    ViewBag.Title = "OpenSky - Document Uploader";
 }
 
 <div class="navbar navbar-fixed-top navbar-top">
     <div id="" class="container-fluid-nav">
         <div id="" class="navbar-header">
-            @Html.ActionLink("Open Sky", "Index", "Document", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Open Sky - Document Uploader", "Index", "Document", new { area = "" }, new { @class = "navbar-brand" })
         </div>
     </div>
 </div>
 <div id="navbar-bottom" class="row">
     <div class="form-group form-group-sm col-sm-3" style="padding-right:0">
-        <button type="button" class="btn btn-sm btn-default pull-right" style="margin-top:4px" onclick="$('#divDocInfo').toggle();"><i class="fa fa-plus"></i></button>
+        <button type="button" class="btn btn-sm btn-default pull-right" style="margin-top:2px" onclick="ToggleDivCadastro();"><i class="fa fa-plus"></i></button>
     </div>
-    <div class="form-group form-group-sm col-sm-6">
-        <h5><span class="spnEditing">Cadastrar Novo</span> Documento:</h5>
+    <div class="form-group form-group-sm col-sm-6" onclick="ToggleDivCadastro();" style="cursor:pointer">
+        <h5><span class="spnEditing">Cadastrar Novo</span> Documento</h5>
     </div>
 </div>
-@*<div class="navbar navbar-bottom">
+<div id="navbar-notification" class="navbar" style="display:none">
         <div id="" class="container-fluid-nav">
             <div id="" class="navbar-header">
-                <h5>Upload Document:</h5>
+                <h5>Atenção! <b><span id="spnCampoObrigatorio">Título</span></b> é obrigatório.</h5>
             </div>
         </div>
-    </div>*@
+    </div>
 
 <div class="container body-content">
     <div id="divDocInfo" class="row" style="display:none">
@@ -60,10 +60,18 @@
                     <input type="text" id="txtVersao" class="form-control" />
                 </div>
                 <div class="form-group form-group-sm col-sm-4">
-                    <label>
-                        Arquivo:
-                    </label>
-                    <input type="file" id="fileArquivo" class="form-control" />
+                    <div id="divLabelsArquivo">
+                        <label>
+                            Arquivo:
+                        </label>
+                        <label id="labelAdicionarNovoArquivo" class="pull-right" for="chkAdicionarNovoArquivo" style="font-weight: normal;">
+                            <input type="checkbox" onchange="ToggleInputArquivo()" id="chkAdicionarNovoArquivo" style="margin-top: -2px; vertical-align: middle;" />
+                            Adicionar Novo Arquivo
+                        </label>
+                    </div>
+                    <div>
+                        <input type="file" id="fileArquivo" class="form-control" />
+                    </div>
                 </div>
                 <div class="form-group form-group-sm col-sm-4">
                     <button type="button" id="btnAdicionarDocument" class="btn btn-md btn-primary pull-right" style="margin-left: 3px;width:100%"><span class="spnEditing">Cadastrar Novo</span> Documento</button>
