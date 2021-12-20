@@ -86,6 +86,8 @@ function SalvarDocumento() {
     if (!ValidarCampos())
         return
 
+    var id = $("#hddIdDocumentoEdicao").val();
+
     var dados = {
         IdDocument: $("#hddIdDocumentoEdicao").val(),
         Title: $("#txtTitulo").val(),
@@ -103,7 +105,7 @@ function SalvarDocumento() {
     //    }
     //});
     AdicionarItem(dados);
-    if (dados.IdDocument > 0) {
+    if (id > 0) {
         Notificacao("Edição salva com sucesso!", "#c3fbbc", true);
     } else {
         Notificacao("Documento salvo com sucesso!", "#c3fbbc", true);
