@@ -27,16 +27,23 @@ namespace OpenSky.Controllers
         }
 
         // GET: api/DocumentAPI
-        public List<DocumentModel> Get()
-        {
-            DocumentList();
-            return documents;
-        }
+
 
         // GET: api/DocumentAPI/5
-        public string Get(int id)
+        public List<DocumentModel> Get(string pesquisa)
         {
-            return "value";
+            DocumentList();
+            if (!String.IsNullOrEmpty(pesquisa))
+            {
+                pesquisa = pesquisa.ToLower();
+                var resultado = documents.Where(r => (r.Title.ToLower().Contains(pesquisa)) || r.Description.ToLower().Contains(pesquisa)).ToList();
+                return resultado;
+            }
+            else
+            {
+                return documents;
+            }
+            
         }
 
         // PUT: api/DocumentAPI/5
