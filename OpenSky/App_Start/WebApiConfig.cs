@@ -17,7 +17,7 @@ namespace OpenSky
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{pesquisa}",
-                defaults: new { pesquisa = "" }
+                defaults: new { pesquisa = RouteParameter.Optional }
             );
         }
     }

@@ -20,16 +20,31 @@ namespace OpenSky.Controllers
         }
 
         // POST: api/DocumentAPI
-        public List<DocumentModel> Post(string value)
+        public List<DocumentModel> Post(DocumentModel document)
+        {
+            DocumentList();
+            var index = documents.FindLastIndex(obj => obj.IdDocument == document.IdDocument);
+            if (index != -1)
+            {
+                documents[index].LastModification = DateTime.Now;
+                documents[index].Title = document.Title;
+                documents[index].Description = document.Description;
+                documents[index].Version = document.Version;
+            }
+            else
+            {
+                documents.Add(document);
+            }
+
+            return documents;
+        }
+
+        public List<DocumentModel> Get()
         {
             DocumentList();
             return documents;
         }
 
-        // GET: api/DocumentAPI
-
-
-        // GET: api/DocumentAPI/5
         public List<DocumentModel> Get(string pesquisa)
         {
             DocumentList();
@@ -43,17 +58,17 @@ namespace OpenSky.Controllers
             {
                 return documents;
             }
-            
+
         }
 
-        // PUT: api/DocumentAPI/5
-        public void Put(int id, [FromBody]string value)
+        public List<DocumentModel> Delete(string pesquisa)
         {
-        }
+            DocumentList();
+            var item = documents.SingleOrDefault(obj => obj.IdDocument == int.Parse(pesquisa));
+            if (item != null)
+                documents.Remove(item);
 
-        // DELETE: api/DocumentAPI/5
-        public void Delete(int id)
-        {
+            return documents;
         }
     }
 }
