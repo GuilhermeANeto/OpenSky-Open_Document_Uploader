@@ -47,7 +47,15 @@ input, select, textarea {
 }
 
 #navbar-notification .container-fluid-nav {
-    background-color: #db00004d;
+    margin-top: 5px;
+}
+
+#navbar-notification {
+    min-height: 35px !important;
+}
+
+#navbar-notification h5{
+    display: inline;
 }
 
 .navbar-bottom {

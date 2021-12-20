@@ -9,7 +9,7 @@ function BuscarDocumentos() {
         data.forEach(function (obj) {
             var titulo = obj.Title.length > 45 ? obj.Title.substring(0, 45) + "..." : obj.Title;
             var descricao = obj.Description.length > 100 ? obj.Description.substring(0, 100) + "..." : obj.Description;
-            var versao = !obj.version ? "" : obj.version
+            var versao = !obj.Version ? "" : obj.Version
 
             var html = '<div id="document_' + obj.IdDocument + '" class="row documentoDaLista">';
             html += '       <div class="form-group form-group-sm col-sm-6 col-sm-offset-3" style="margin-bottom:0">';
@@ -21,8 +21,9 @@ function BuscarDocumentos() {
             html += '           </a>';
             html += '       </div>';
             html += '       <div style="margin-top: 25px">';
-            html += '           <button type="button" class="btn btn-sm btn-default" style="" onclick="BuscarDocumento(' + obj.IdDocument + ');"><i class="fa fa-edit"></i></button>';
             html += '           <button type="button" class="btn btn-sm btn-default" style="" onclick="BuscarDocumentos(' + obj.IdDocument + ');"><i class="fa fa-download"></i></button>';
+            html += '           <button type="button" class="btn btn-sm btn-default" style="" onclick="BuscarDocumento(' + obj.IdDocument + ');"><i class="fa fa-edit"></i></button>';
+            html += '           <button type="button" class="btn btn-sm btn-default" style="" onclick="ExcluirDocumento(' + obj.IdDocument + ');"><i class="fa fa-remove"></i></button>';
             html += '       </div>';
             html += '       <span class="titulo" style="display:none">' + obj.Title + '</span>';
             html += '       <span class="descricao" style="display:none">' + obj.Description + '</span>';
@@ -37,7 +38,8 @@ function BuscarDocumentos() {
 
 function BuscarDocumento(id) {
     ToggleDivCadastro(true);
-    $(".spnEditing").text("Editar");
+    $("#headerNovoCadastro").text("Editar Documento");
+    $("#btnAdicionarDocument").text("Salvar Edição");
     $("#labelAdicionarNovoArquivo").show();
     $('#divLabelsArquivo').css("margin-top", "30px");
     $("#fileArquivo").hide();
@@ -69,36 +71,65 @@ function SalvarDocumento() {
     };
 
     var url = "/api/DocumentAPI";
-    $.get(url, dados, function (data) { }
+    $.get(url, dados, function (data) { });
 
 };
 
+function ExcluirDocumento(id) {
+    $("#hddIdDocumentoEdicao").val(id);
+    Notificacao("Documento excluído com sucesso!", "#c3fbbc", true);
+    $("#document_" + id).slideUp();
+    window.setTimeout(function () { CompletarExclusao(id) }, 5000);
+}
+
+function CompletarExclusao(id) {
+    if (!exclusaoCancelada) {
+        alert('deletion completed');
+        //$.ajax(url, dados, function (data) { }); // -------------------------------------- finish this
+    } 
+}
+var exclusaoCancelada = false;
+function CancelarExclusao() {
+    exclusaoCancelada = true
+    var id = $("#hddIdDocumentoEdicao").val();
+    $("#document_" + id).slideDown();
+    Notificacao("Exclusão cancelada com sucesso!", "#c3fbbc", false);
+}
+
 function ValidarCampos() {
     if ($("#txtTitulo").val() == "") {
-        $('#spnCampoObrigatorio').text("Título");
-        $('#navbar-notification').slideDown();
+        Notificacao("O título é obrigatório!", "#f4b2b2");
         return false;
     } else {
         $('#navbar-notification').slideUp();
     }
 
     if ($("#txtDescricao").val() == "") {
-        $('#spnCampoObrigatorio').text("Descrição");
-        $('#navbar-notification').slideDown();
+        Notificacao("A descrição é obrigatória!", "#f4b2b2");
         return false;
     } else {
         $('#navbar-notification').slideUp();
     }
     if ($("#hddIdDocumentoEdicao").val() == "") {
         if ($('#fileArquivo').get(0).files.length == 0) {
-            $('#spnCampoObrigatorio').text("O Arquivo");
-            $('#navbar-notification').slideDown();
+            Notificacao("O arquivo é obrigatório!", "#f4b2b2");
             return false
         } else {
             $('#navbar-notification').slideUp();
         }
     }
     return true;
+}
+
+function Notificacao(descricao, cor, excluindoDoc) {
+    $("#spnNotificacao").text(descricao);
+    $("#navbar-notification").css("background-color", cor);
+    $('#navbar-notification').slideDown().delay(5000).slideUp();
+    if (excluindoDoc)
+        $("#btnCancelarExclusao").show();
+    else
+        $("#btnCancelarExclusao").hide();
+
 }
 
 function ToggleDivCadastro(editando) {
@@ -121,7 +152,8 @@ function ToggleInputArquivo() {
 }
 
 function LimparCampos() {
-    $(".spnEditing").text("Cadastrar Novo");
+    $("#headerNovoCadastro").text("Cadastrar Novo Documento");
+    $("#btnAdicionarDocument").text("Cadastrar Documento");
     $("#labelAdicionarNovoArquivo").hide();
     $("#fileArquivo").show();
     $('#divLabelsArquivo').css("margin-top", "0");

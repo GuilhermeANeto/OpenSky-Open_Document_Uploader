@@ -14,6 +14,7 @@ namespace OpenSky.Models
         public string FileName { get; set; }
         public string FilePath { get; set; }
         public DateTime DateTimeUpload { get; set; }
+        public DateTime LastModification { get; set; }
         public int User { get; set; }
     }
 }

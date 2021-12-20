@@ -15,16 +15,17 @@
         <button type="button" class="btn btn-sm btn-default pull-right" style="margin-top:2px" onclick="ToggleDivCadastro();"><i class="fa fa-plus"></i></button>
     </div>
     <div class="form-group form-group-sm col-sm-6" onclick="ToggleDivCadastro();" style="cursor:pointer">
-        <h5><span class="spnEditing">Cadastrar Novo</span> Documento</h5>
+        <h5 id="headerNovoCadastro">Cadastrar Novo Documento</h5>
     </div>
 </div>
 <div id="navbar-notification" class="navbar" style="display:none">
-        <div id="" class="container-fluid-nav">
-            <div id="" class="navbar-header">
-                <h5>Atenção! <b><span id="spnCampoObrigatorio">Título</span></b> é obrigatório.</h5>
-            </div>
+    <div id="" class="container-fluid-nav">
+        <div id="" class="navbar-header">
+            <h5>Atenção! <b><span id="spnNotificacao"></span></b></h5>
+            <button type="button" id="btnCancelarExclusao" class="btn btn-xs btn-danger" style="display:none;margin-bottom: 2px;" onclick="CancelarExclusao();"><i class="fa fa-remove" style="margin-right:5px;"></i>Cancelar</button>
         </div>
     </div>
+</div>
 
 <div class="container body-content">
     <div id="divDocInfo" class="row" style="display:none">
@@ -74,7 +75,7 @@
                     </div>
                 </div>
                 <div class="form-group form-group-sm col-sm-4">
-                    <button type="button" id="btnAdicionarDocument" class="btn btn-md btn-primary pull-right" style="margin-left: 3px;width:100%"><span class="spnEditing">Cadastrar Novo</span> Documento</button>
+                    <button type="button" id="btnAdicionarDocument" class="btn btn-md btn-primary pull-right" style="margin-left: 3px;width:100%">Cadastrar</button>
                 </div>
             </div>
         </div>
@@ -87,7 +88,7 @@
             <button type="button" class="btn btn-sm btn-default" style="" onclick="BuscarDocumentos();"><i class="fa fa-search"></i></button>
         </div>
         <div id="divDocumentList" class="row list-group">
-   
+
         </div>
     </div>
 </div>
